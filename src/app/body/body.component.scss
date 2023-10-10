@@ -1,0 +1,59 @@
+.container {
+    position: relative;
+    text-align: center;
+    color: white;
+    border: 1px solid grey;
+    img {
+        width: 100%;
+    }
+
+    .centered {
+        background-color: #3e5569;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        // border: 1px solid black;
+
+        .welcome {
+            p{
+                color: black;
+                font-family: serif;
+                font-size: 3rem;
+            }
+        }
+        .text { 
+
+            p {
+                color: black;
+                font-size: 1.5rem;
+            }
+        }
+
+        button {
+            
+            font-size: 20px;
+            background-color: black;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 9px #999;
+            outline: none;
+            padding: 10px 20px;
+            border-radius: 10px;
+
+            &:hover {
+
+                background-color: grey;
+            }
+
+            &:active {
+
+                background-color: grey;
+                box-shadow: 0 5px grey;
+                transform: translateY(4px);
+            }
+        }
+    }
+
+}

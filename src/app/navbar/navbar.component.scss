@@ -1,0 +1,49 @@
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #3e5569;
+    color: #fff;
+
+    .logo {
+        
+        font-size: 32px;
+        a {
+            color: white;
+        }
+    }
+
+    .nav-links  {
+
+        input[type=checkbox] {
+            display: none;
+        }
+
+        .hamburger {
+            display: none;
+            font-size: 24px;
+            user-select: none;
+        }
+
+        .menu {
+            display: flex;
+            gap: 1em;
+            font-size: 18px;
+            
+            li {
+                padding: 5px 14px;
+
+                a {
+                    color: white;
+                }
+
+                &:hover {
+                    background-color: grey;
+                    border-radius: 5px;
+                    transition: 0.3s ease;
+                }
+            }
+        }
+    }
+}
