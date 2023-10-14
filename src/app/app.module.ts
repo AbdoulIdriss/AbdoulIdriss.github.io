@@ -7,6 +7,8 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
 import { BodyComponent } from './body/body.component';
 import { BooksComponent } from './books/books.component';
+import { ModalComponent } from './modal/modal.component';
+import { LibraryComponent } from './library/library.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +16,9 @@ import { BooksComponent } from './books/books.component';
     NavbarComponent,
     FooterComponent,
     BodyComponent,
-    BooksComponent
+    BooksComponent,
+    ModalComponent,
+    LibraryComponent
   ],
   imports: [
     BrowserModule,

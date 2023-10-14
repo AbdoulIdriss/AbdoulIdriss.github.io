@@ -1,13 +1,52 @@
 <div class="book-container">
+
     <ul *ngFor="let book of Books">
 
         <li><img src="{{book.image}}" alt="" srcset=""></li>
 
         <li>{{book.title}}</li>
 
+        <ng-container *ngIf="display$ | async as display">
+
+            <section [class.open]="display === 'open'" (click)="close()">
+
+                <div (click)="$event.stopPropagation()">
+
+                    <button class="close" type="button" (click)="close()"> Close </button>
+
+                    <ul *ngIf="bookInModal">
+
+                        <div class="book">
+
+                            <li> <img src="{{bookInModal.image}}" alt="" srcset=""> </li>
+
+                        </div>
+
+                        <div class="description">
+
+                            <li class="title"> {{bookInModal.title}} </li>
+                            <li> {{bookInModal.description}} </li>
+
+                            <div class="buttons">
+
+                                <button class="read" type="button"> read more</button>
+                                <button routerLink="/library" class="Add" type="button"> + </button>
+
+                            </div>
+
+                        </div>
+
+                    </ul>
+
+                </div>
+
+            </section>
+
+        </ng-container>
+
         <div class="reader">
 
-            <button type="button">Read</button>
+            <button (click)="open(book)" type="button"> Read </button>
 
         </div>
 

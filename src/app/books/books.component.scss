@@ -1,17 +1,109 @@
-.book-container{
-    display: flex;
-    justify-content: center;
-    gap: 3rem;
-    margin-top: 1rem;
+.book-container {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 2rem;
+  justify-content: center;
+  gap: 3rem;
+  margin-top: 1rem;
 
-    ul {
-        .reader {
-            display: flex;
-            justify-content: center;
+  ul {
+    .reader {
+      display: flex;
+      justify-content: center;
 
-            button {
-                padding: 5px 30px;
-            }
-        }
+      button {
+        padding: 5px 30px;
+      }
     }
+
+    section {
+      visibility: hidden;
+      opacity: 0;
+
+      &.open {
+        visibility: inherit;
+        opacity: 1;
+      }
+
+      display: block;
+
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+
+      background: rgba(0, 0, 0, 0.2);
+      transition: opacity 250ms ease-in;
+
+      > div {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        height: 500px;
+        width: 500px;
+
+        background: #3e5569;
+        padding: 64px;
+
+        border-radius: 8px;
+
+        box-shadow: 0 0 8px 4px rgba(0, 0, 0, 0.1);
+
+        button.close {
+          background: none;
+          color: inherit;
+          border: none;
+          font: inherit;
+          cursor: pointer;
+          outline: none;
+
+          position: absolute;
+          top: 0;
+          right: 0;
+
+          padding: 16px;
+        }
+
+        ul {
+
+          display: flex;
+          width: 100%;
+          margin-top: 3rem;
+
+          .description {
+            display: block;
+            width: 75%;
+            padding-left: 1rem;
+
+            .title{
+
+              color: #ffff;
+              font-size: large;
+              margin: 0px 0px 10px 15px;
+              
+            }
+
+            .buttons {
+
+              display: flex;
+
+              .read {
+                margin: 5px;
+                margin-left: 2rem;
+                padding: 5px;
+                border-radius: 10px;
+              }
+              .Add{
+                border-radius: 20px;
+                padding: 10px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 }
