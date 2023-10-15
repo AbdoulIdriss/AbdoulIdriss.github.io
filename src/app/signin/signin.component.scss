@@ -1,0 +1,99 @@
+.signin {
+
+    display: flex;
+    height: 30rem;
+    justify-content: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+    border-radius: 8px;
+
+    form {
+        display: grid;
+        margin: 30px;
+
+        h1 {
+
+            font-size: 30px;
+            text-align: center;
+            justify-content: center;
+            color: #3c00a0;
+            border: none;
+        }
+
+        .form-group {
+            margin:  5px 30px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+            border-radius: 6px;
+            font-size: 18px;
+            color: black;
+
+            i {
+                margin-top: 20px;
+                padding-left: 5px;
+                color: black;
+            }
+            label{
+                margin-left: 5px;
+            }
+
+            input {
+                
+                height: 100%;
+                outline: none;
+                border: none;
+                color: black;
+                background-color: #fff;
+            }
+        }
+
+
+        button[type=submit] {
+            padding: 0.5rem 6.5rem;
+            justify-content: center;
+            margin-top: 0.5rem;
+            margin-left: 1.7rem;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+            background-color: rgb(106, 106, 238);
+            border-radius: 8px;
+            border: none;
+            font-weight: bold;
+            color: white;
+
+            &:hover {
+                scale: 1.1;
+                transition: 0.2s ease-in;
+
+            }
+
+        }
+
+        .F-password {
+            display: flex;
+            justify-content: center;
+            color: black;
+            p{
+                a{
+                    text-decoration: none;
+                }
+            }
+        }
+
+        .createA {
+
+            // background-color: white;
+            color: black;
+            display: flex;
+            justify-content: center;
+
+            .text{
+                margin-top: 5px;
+            }
+
+            a {
+                text-decoration: none;
+                color: blue;
+                font-size: 1.5rem;
+            }
+        }
+    }
+
+}

@@ -4,16 +4,19 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
 import { BodyComponent } from './body/body.component';
 import { BooksComponent } from './books/books.component';
-import { ModalComponent } from './modal/modal.component';
 import { LibraryComponent } from './library/library.component';
+import { SigninComponent } from './signin/signin.component';
+import { SignupComponent } from './signup/signup.component';
 
 const routes: Routes = [
   { path:'', redirectTo:'app', pathMatch:'full'},
   { path:'navbar', component:NavbarComponent },
-  { path: 'body', component:BodyComponent },
+  { path: '', component:BodyComponent },
   { path:'footer', component:FooterComponent },
   { path: 'books', component:BooksComponent },
   { path: 'library', component:LibraryComponent },
+  { path: 'signin', component: SigninComponent },
+  { path: 'signup', component: SignupComponent },
 ];
 
 @NgModule({
