@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from '../Services/auth.service';
+import { NavandfootService } from '../Services/navandfoot.service';
 
 
 @Component({
@@ -18,12 +19,11 @@ export class SignupComponent {
 
   formBuilder = new FormBuilder(); //Always initialize form builder by using this method for forms
 
- constructor( private authService: AuthService, private router:Router) {} //cretad a private constructor for the form builder which 
-  // will be accesbile accesible only in the form
+ constructor( private authService: AuthService, private router:Router, private navAndFoot: NavandfootService) {} 
 
+  //here i created a method containing our form and validations requirements
   ngOnInit():void 
-  { //here i created a method containing our form and validations requirements
-
+  { 
     this.updatedForm = this.formBuilder.group({
 
       username : new FormControl('', [
@@ -43,6 +43,9 @@ export class SignupComponent {
       ])
 
     })
+
+    this.navAndFoot.hide();
+
   }
 
   onSubmit(){
@@ -55,7 +58,7 @@ export class SignupComponent {
 
     } else {
 
-      this.router.navigate(['dashboard']);
+      this.router.navigate(['books']);
     }
 
   }

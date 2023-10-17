@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from '../Services/auth.service';
+import { NavandfootService } from '../Services/navandfoot.service';
 
 
 @Component({
@@ -18,7 +19,7 @@ export class SigninComponent implements OnInit{
 
   formBuilder = new FormBuilder(); //Always initialize form builder by using this method for forms
 
- constructor(  private authService:AuthService, private router:Router) {} 
+ constructor(  private authService:AuthService, private router:Router, public navAndFoot: NavandfootService) {} 
 
   ngOnInit():void { 
 
@@ -36,6 +37,9 @@ export class SigninComponent implements OnInit{
       ])
 
     })
+
+    this.navAndFoot.hide();
+    
   }
 
   onSubmit(){
@@ -48,14 +52,14 @@ export class SigninComponent implements OnInit{
 
     if (checkMail) {
 
-    // this.router.navigate[('dashboard')]
+    // this.router.navigate[('books')]
            
     } else {
       
       alert('info does not match');
     }
 
-
   }
+
 
 }
