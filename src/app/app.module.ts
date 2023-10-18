@@ -1,8 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';
-import {MatMenuModule} from '@angular/material/menu';
-import {MatButtonModule} from '@angular/material/button';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -36,8 +34,6 @@ import { AboutComponent } from './about/about.component';
     AppRoutingModule,
     FontAwesomeModule,
     BrowserAnimationsModule,
-    MatMenuModule,
-    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

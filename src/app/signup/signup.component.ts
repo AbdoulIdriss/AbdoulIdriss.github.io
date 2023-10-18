@@ -12,8 +12,9 @@ import { NavandfootService } from '../Services/navandfoot.service';
 })
 export class SignupComponent {
 
-  error: string | null = 'Email already available';
+  error: string = '';
 
+  regex_password: RegExp = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@$!%*#?&^_-]).{8,}/;
 
   updatedForm! : FormGroup;
 
@@ -39,7 +40,7 @@ export class SignupComponent {
       password : new FormControl('', [
         Validators.required,
         Validators.minLength(8),
-        Validators.pattern(/^(?=.*[A-Z])(?=.*\d)(?=.*\W)[A-Za-z\d\W\w]{8,}/)
+        Validators.pattern(this.regex_password)
       ])
 
     })
@@ -52,13 +53,17 @@ export class SignupComponent {
 
     const warning = this.authService.register(this.updatedForm.value)
 
-    if (warning.error === true) {
+    if (!warning.error) {
 
-      alert(this.error)
+      this.router.navigate(['dashboard'], {
+
+        queryParams: {id: warning.data.id}
+      })
 
     } else {
 
-      this.router.navigate(['books']);
+      this.error = warning.message
+      
     }
 
   }
