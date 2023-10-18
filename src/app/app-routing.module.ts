@@ -7,6 +7,7 @@ import { BooksComponent } from './books/books.component';
 import { LibraryComponent } from './library/library.component';
 import { SigninComponent } from './signin/signin.component';
 import { SignupComponent } from './signup/signup.component';
+import { AboutComponent } from './about/about.component';
 
 const routes: Routes = [
   { path:'', redirectTo:'app', pathMatch:'full'},
@@ -15,8 +16,9 @@ const routes: Routes = [
   { path:'footer', component:FooterComponent },
   { path: 'books', component:BooksComponent },
   { path: 'library', component:LibraryComponent },
-  { path: 'signin', component: SigninComponent },
-  { path: 'signup', component: SignupComponent },
+  { path: 'signin', component:SigninComponent },
+  { path: 'signup', component:SignupComponent },
+  { path: 'about', component:AboutComponent }
 ];
 
 @NgModule({

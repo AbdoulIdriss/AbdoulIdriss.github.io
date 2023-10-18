@@ -1,26 +1,20 @@
 <nav *ngIf="navAndFoot.visible" class="navbar">
-    <!-- LOGO -->
-    <div class="logo"> <a href="/">BIC LIBRARY </a></div>
-    <!-- <div class="logo"> <a href="/">Home</a> </div> -->
+  <!-- LOGO -->
+  <div class="logo"> <a href="/">BIC LIBRARY </a></div>
+  <!-- <div class="logo"> <a href="/">Home</a> </div> -->
 
-    <!-- NAVIGATION MENU -->
-    <ul class="nav-links">
+  <!-- NAVIGATION MENU -->
+  <ul class="nav-links">
 
-      <!-- NAVIGATION MENUS -->
-      <div class="menu">
+    <!-- NAVIGATION MENUS -->
+    <div class="menu">
 
-        <li><a href="books">Books</a></li>
-        <li><a href="/">About</a></li>
-        <li><a href="/">Contact</a></li>
-        <li>
-          <ejs-dropdownlist id='ddlelement'  [dataSource]="dropDown" popupHeight="200px" popupWidth="250px"> 
+      <li><a href="books">Books</a></li>
+      <li><a href="/about">About</a></li>
+      <li><a href="/footer">Contact</a></li>
+      <li> <a href="/signin">SignIn</a></li>
 
-          </ejs-dropdownlist>
-        </li>
+    </div>
 
-      </div>
-
-    </ul>
-  </nav>
-
-  <!-- https://ej2.syncfusion.com/angular/documentation/drop-down-list/getting-started?cs-save-lang=1&cs-lang=ts -->
+  </ul>
+</nav>

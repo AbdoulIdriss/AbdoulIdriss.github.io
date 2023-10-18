@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavandfootService } from '../Services/navandfoot.service';
+import { FaIconLibrary } from '@fortawesome/angular-fontawesome';
 
 @Component({
   selector: 'app-navbar',
@@ -8,8 +9,6 @@ import { NavandfootService } from '../Services/navandfoot.service';
 })
 export class NavbarComponent {
 
-  constructor (public navAndFoot: NavandfootService){} 
-
-  public dropDown: string[] = ['Signup','Logout'];
+  constructor (public navAndFoot: NavandfootService, library:FaIconLibrary){} 
 
 }

@@ -6,6 +6,7 @@
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
     border-radius: 8px;
     background-color: #3e5569;
+    height: 100%;
 
     .form {
 
@@ -28,7 +29,6 @@
         .form-group {
             margin:  5px 30px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
-            // border-radius: 6px;
             font-size: 18px;
             color: black;
             
@@ -87,7 +87,6 @@
 
         .createA {
 
-            // background-color: white;
             color: black;
             display: flex;
             justify-content: center;
@@ -105,3 +104,4 @@
     }
 
 }
+

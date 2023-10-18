@@ -5,7 +5,6 @@ import { Injectable } from '@angular/core';
 })
 export class LocalstorageService {
 
-
   insert(key: string, data:any) {
 
     const stringConverter = JSON.stringify(data)
