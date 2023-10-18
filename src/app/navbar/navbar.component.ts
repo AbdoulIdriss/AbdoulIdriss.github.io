@@ -9,4 +9,7 @@ import { NavandfootService } from '../Services/navandfoot.service';
 export class NavbarComponent {
 
   constructor (public navAndFoot: NavandfootService){} 
+
+  public dropDown: string[] = ['Signup','Logout'];
+
 }
