@@ -55,6 +55,7 @@
         }
 
         .conditions{
+
             background-color: white;
         }
 
@@ -71,12 +72,13 @@
             font-weight: bold;
 
             &:hover {
+                
                 scale: 1.1;
                 transition: 0.2s ease-in;
             }
         }
 
-        span {
+        p {
             background-color: white;
             color: black;
             margin-bottom: 10px;

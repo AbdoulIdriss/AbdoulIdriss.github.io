@@ -1,12 +1,13 @@
 import { Injectable } from '@angular/core';
 import { LocalstorageService } from './localstorage.service';
+import { UserInterface } from '../signup/user.interface';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
 
-  constructor(private localStorageService: LocalstorageService) { }
+  constructor(private localStorage: LocalstorageService) { }
 
   emailError: null | undefined | string = null;
 
@@ -14,7 +15,7 @@ export class AuthService {
 
     let verifiedEmail : boolean = false ;
 
-    const users = this.localStorageService.select('users')
+    const users: Array<UserInterface> = this.localStorage.select('users')
 
     if (users) {
 
@@ -66,18 +67,18 @@ export class AuthService {
       }
     }
 
-    let users = this.localStorageService.select('users') ?? [];
+    let users: Array<UserInterface> = this.localStorage.select('users') ?? [];
 
     user['id'] = Date.now
     user['createdAT'] = this.getCurrentDate();
     
     users.push(user);
 
-    this.localStorageService.insert('users', users);
+    this.localStorage.insert('users', users);
 
     return {
       error:false,
-      message:'Welcome',
+      message:'Profile Sucessfully created',
       data:user
     }
   } 
@@ -86,9 +87,9 @@ export class AuthService {
 
   logCheck( email:string , password:string )  {
 
-    let verifylog : null= null ;
+    let verifylog : UserInterface | null = null;
 
-    const users = this.localStorageService.select('users')
+    const users: Array<UserInterface> = this.localStorage.select('users')
 
     if (users) {
 
@@ -108,12 +109,12 @@ export class AuthService {
 
     if (verifylog) {
       
-      this.localStorageService.insert('auth' , verifylog);
+      this.localStorage.insert('auth' , verifylog);
 
       return {
 
         error: false,
-        message: "Loged succesfully",
+        message: "Logged succesfully",
         data:verifylog
       }
     }
@@ -127,7 +128,7 @@ export class AuthService {
 
   auth(){
 
-    const user:any = this.localStorageService.select('auth');
+    const user:any = this.localStorage.select('auth');
 
     if (user) {
       return {
