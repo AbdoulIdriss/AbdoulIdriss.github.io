@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FaIconLibrary } from '@fortawesome/angular-fontawesome';
-import { NavandfootService } from '../Services/navandfoot.service';
+import { NavandfootService } from '../auth/Services/navandfoot.service';
+
 
 @Component({
   selector: 'app-footer',
@@ -9,6 +10,9 @@ import { NavandfootService } from '../Services/navandfoot.service';
 })
 export class FooterComponent {
 
-  constructor (public navAndFoot: NavandfootService, library:FaIconLibrary){} 
+  constructor (
+    public navAndFoot: NavandfootService, 
+    library:FaIconLibrary
+    ){} 
   
 }

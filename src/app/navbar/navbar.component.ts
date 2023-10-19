@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { NavandfootService } from '../Services/navandfoot.service';
 import { FaIconLibrary } from '@fortawesome/angular-fontawesome';
+import { NavandfootService } from '../auth/Services/navandfoot.service';
 
 @Component({
   selector: 'app-navbar',
@@ -9,6 +9,8 @@ import { FaIconLibrary } from '@fortawesome/angular-fontawesome';
 })
 export class NavbarComponent {
 
-  constructor (public navAndFoot: NavandfootService, library:FaIconLibrary){} 
-
+  constructor (
+    public navAndFoot: NavandfootService, 
+    library:FaIconLibrary
+  ){} 
 }

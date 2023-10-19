@@ -5,20 +5,21 @@ import { FooterComponent } from './footer/footer.component';
 import { BodyComponent } from './body/body.component';
 import { BooksComponent } from './books/books.component';
 import { LibraryComponent } from './library/library.component';
-import { SigninComponent } from './signin/signin.component';
-import { SignupComponent } from './signup/signup.component';
 import { AboutComponent } from './about/about.component';
+import { SigninComponent } from './auth/signin/signin.component';
+import { SignupComponent } from './auth/signup/signup.component';
 
 const routes: Routes = [
-  { path:'', redirectTo:'app', pathMatch:'full'},
-  { path:'navbar', component:NavbarComponent },
+  { path:'', redirectTo:'app', pathMatch:'full', title:'Home'},
+  { path:'navbar', component:NavbarComponent, },
   { path: '', component:BodyComponent },
+  { path: 'body', component:BodyComponent, title:'Home'},
   { path:'footer', component:FooterComponent },
-  { path: 'books', component:BooksComponent },
-  { path: 'library', component:LibraryComponent },
-  { path: 'signin', component:SigninComponent },
-  { path: 'signup', component:SignupComponent },
-  { path: 'about', component:AboutComponent }
+  { path: 'books', component:BooksComponent, title:'Books' },
+  { path: 'library', component:LibraryComponent, title:'favorites'},
+  { path: 'signin', component:SigninComponent, title:'SignIn'},
+  { path: 'signup', component:SignupComponent, title:'SignUp'},
+  { path: 'about', component:AboutComponent, title:'About' }
 ];
 
 @NgModule({

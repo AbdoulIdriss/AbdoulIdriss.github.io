@@ -5,15 +5,14 @@ import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontaweso
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
 import { BodyComponent } from './body/body.component';
 import { BooksComponent } from './books/books.component';
 import { LibraryComponent } from './library/library.component';
-import { SigninComponent } from './signin/signin.component';
-import { SignupComponent } from './signup/signup.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AboutComponent } from './about/about.component';
+import { AuthModule } from './auth/auth.module';
+import { NavbarComponent } from './navbar/navbar.component';
 
 
 
@@ -25,8 +24,6 @@ import { AboutComponent } from './about/about.component';
     BodyComponent,
     BooksComponent,
     LibraryComponent,
-    SigninComponent,
-    SignupComponent,
     AboutComponent
   ],
   imports: [
@@ -34,6 +31,7 @@ import { AboutComponent } from './about/about.component';
     AppRoutingModule,
     FontAwesomeModule,
     BrowserAnimationsModule,
+    AuthModule
   ],
   providers: [],
   bootstrap: [AppComponent]
