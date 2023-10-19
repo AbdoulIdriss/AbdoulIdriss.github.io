@@ -17,24 +17,27 @@ export class SigninComponent implements OnInit{
 
   updatedForm! : FormGroup;
 
-  formBuilder = new FormBuilder(); //Always initialize form builder by using this method for forms
-
- constructor(  private authService:AuthService, private router:Router, public navAndFoot: NavandfootService) {} 
+ constructor(  
+  private authService:AuthService, 
+  private router:Router, 
+  public navAndFoot: NavandfootService,
+  private formBuilder: FormBuilder
+  ) {} 
 
   ngOnInit():void { 
 
     this.updatedForm = this.formBuilder.group({
 
-      email : new FormControl('', [
+      email : ['', [
         Validators.required,
         Validators.email
-      ]),
+      ]],
 
-      password : new FormControl('', [
+      password : ['', [
         Validators.required,
         Validators.minLength(8),
         Validators.pattern('((?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,30})'),
-      ])
+      ]]
 
     })
 
@@ -42,7 +45,7 @@ export class SigninComponent implements OnInit{
     
   }
 
-  onSubmit(){
+  onSubmit():void{
 
     console.log(this.updatedForm);
     

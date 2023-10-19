@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from '../Services/auth.service';
@@ -10,37 +10,40 @@ import { NavandfootService } from '../Services/navandfoot.service';
   templateUrl: './signup.component.html',
   styleUrls: ['./signup.component.scss']
 })
-export class SignupComponent {
+export class SignupComponent implements OnInit{
 
   error: string | null = 'Email already available';
 
 
   updatedForm! : FormGroup;
 
-  formBuilder = new FormBuilder(); //Always initialize form builder by using this method for forms
-
- constructor( private authService: AuthService, private router:Router, private navAndFoot: NavandfootService) {} 
+ constructor( 
+  private authService: AuthService, 
+  private router:Router, 
+  private navAndFoot: NavandfootService,
+  private formBuilder:FormBuilder
+  ) {} 
 
   //here i created a method containing our form and validations requirements
   ngOnInit():void 
   { 
     this.updatedForm = this.formBuilder.group({
 
-      username : new FormControl('', [
+      username : ['', [
         Validators.required,
         Validators.minLength(5)
-      ]),
+      ]],
 
-      email : new FormControl('', [
+      email : ['', [
         Validators.required,
         Validators.email
-      ]),
+      ]],
 
-      password : new FormControl('', [
+      password : ['', [
         Validators.required,
         Validators.minLength(8),
         Validators.pattern(/^(?=.*[A-Z])(?=.*\d)(?=.*\W)[A-Za-z\d\W\w]{8,}/)
-      ])
+      ]]
 
     })
 
@@ -48,7 +51,7 @@ export class SignupComponent {
 
   }
 
-  onSubmit(){
+  onSubmit() : void{
 
     const warning = this.authService.register(this.updatedForm.value)
 
