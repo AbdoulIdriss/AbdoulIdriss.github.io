@@ -1,6 +1,8 @@
 <nav *ngIf="navAndFoot.visible" class="navbar">
   <!-- LOGO -->
-  <div class="logo"> <a href="/">BIC LIBRARY </a></div>
+  <div class="logo">
+    <h3> <a href=""> BIC<span>LIBRARY</span> </a></h3>
+    </div>
   <!-- <div class="logo"> <a href="/">Home</a> </div> -->
 
   <!-- NAVIGATION MENU -->
@@ -12,7 +14,15 @@
       <li><a href="books">Books</a></li>
       <li><a href="/about">About</a></li>
       <li><a href="/footer">Contact</a></li>
-      <li> <a href="/signin">SignIn</a></li>
+      <li class="btn">
+
+        <button mat-button [matMenuTriggerFor]="menu">Profile</button>
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item><a href="/signin">SignIn</a></button>
+          <button mat-menu-item>LogOut</button>
+        </mat-menu>
+
+      </li>
 
     </div>
 

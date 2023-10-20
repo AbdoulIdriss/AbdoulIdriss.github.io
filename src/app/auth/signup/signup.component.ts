@@ -12,64 +12,61 @@ import { NavandfootService } from '../Services/navandfoot.service';
 })
 export class SignupComponent implements OnInit{
 
-  error: string = '';
-
   regex_password: RegExp = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@$!%*#?&^_-]).{8,}/;
+  registerForm: FormGroup = new FormGroup({});
+  saveError: string = '';
 
-  updatedForm! : FormGroup;
+  constructor (
+    private formBuilder: FormBuilder,
+    private authService: AuthService,
+    private router: Router,
+    public navAndFoot: NavandfootService,
+  ) {}
 
- constructor( 
-  private authService: AuthService, 
-  private router:Router, 
-  private navAndFoot: NavandfootService,
-  private formBuilder: FormBuilder
-  ) {} 
 
-  //here i created a method containing our form and validations requirements
-  ngOnInit():void 
-  { 
-    this.updatedForm = this.formBuilder.group({
+  ngOnInit(): void {
+    
+    this.navAndFoot.hide();
 
-      username : ['', [
+    this.registerForm = this.formBuilder.group({
+      name:['', [
         Validators.required,
-        Validators.minLength(5)
+        Validators.minLength(4),
+        Validators.maxLength(20)
       ]],
 
-      email :['', [
+      email: ['', [
         Validators.required,
         Validators.email
       ]],
 
-      password :['', [
+      password: ['', [
         Validators.required,
-        Validators.minLength(8),
         Validators.pattern(this.regex_password)
       ]]
 
     })
 
-    this.navAndFoot.hide();
-
   }
 
-  onSubmit():void{
+  onSubmit(): void {
 
-    const warning = this.authService.register(this.updatedForm.value)
+    const save = this.authService.register(this.registerForm.value);
 
-    if (!warning.error) {
+    if (!save.error) {
 
-      this.router.navigate(['books'], {
+      localStorage.setItem('auth', JSON.stringify(save.data))
 
-        queryParams: {id: warning.data.id}
+      this.router.navigate(['body'], {
 
+        queryParams: {id: save.data.id}
       })
-
     } else {
 
-      alert(this.error = warning.message);
-
+      this.saveError = save.message
     }
-
   }
+
+
 
 }
