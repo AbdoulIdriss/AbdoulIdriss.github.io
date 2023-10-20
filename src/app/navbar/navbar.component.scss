@@ -38,13 +38,20 @@
                     background-color: grey;
                     border-radius: 5px;
                     transition: 0.3s ease;
-                }
-
- 
-            }
-            .btn{
+                }         
                 
             }
+            .btn{
+                a{
+                    color: #fff;
+                }
+            }
+            #matMenu{
+                a{
+                    color: #fff;
+                }
+            }
+
         }
     }
 }
