@@ -18,6 +18,7 @@ export class NavbarComponent {
     private router:Router
   ){} 
 
+  //logout function
   logout() {
     this.localStorage.removeitem('auth');
     this.router.navigate(['signIn'])
