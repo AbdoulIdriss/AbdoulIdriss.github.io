@@ -15,13 +15,37 @@ export class NavbarComponent {
     public navAndFoot: NavandfootService, 
     library:FaIconLibrary,
     private localStorage:LocalstorageService,
-    private router:Router
+    private router:Router,
   ){} 
+
+    //function to check if the user is logged in (to be used to make the signin and logout button appear or disappear)
+    checkLog():boolean{
+      if (this.localStorage.select('auth')) {
+        return true;
+      }
+      return false;
+    }
+
+    //click to redirect to signin
+  signin() {
+    this.router.navigate(['signin'])
+  }
+
+  //click to go to dashboard
+  dashboard() {
+    this.router.navigate(['dashboard'])
+  }
+  
+  //click to go library
+  favorites() {
+    this.router.navigate(['library'])
+  }
 
   //logout function
   logout() {
+
     this.localStorage.removeitem('auth');
-    this.router.navigate(['signIn'])
+    this.router.navigate(['signin'])
   }
 
 }

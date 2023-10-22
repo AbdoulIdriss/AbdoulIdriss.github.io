@@ -29,7 +29,20 @@ export class SignupComponent implements OnInit{
     this.navAndFoot.hide();
 
     this.registerForm = this.formBuilder.group({
-      name:['', [
+    
+      username:['', [
+        Validators.required,
+        Validators.minLength(4),
+        Validators.maxLength(20)
+      ]],
+
+      firstname:['', [
+        Validators.required,
+        Validators.minLength(4),
+        Validators.maxLength(20)
+      ]],
+
+      lastname:['', [
         Validators.required,
         Validators.minLength(4),
         Validators.maxLength(20)

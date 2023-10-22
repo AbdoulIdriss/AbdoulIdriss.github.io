@@ -54,7 +54,7 @@
 
         button.close {
           background: none;
-          color: inherit;
+          color: white;
           border: none;
           font: inherit;
           cursor: pointer;
@@ -93,12 +93,12 @@
               .read {
                 margin: 5px;
                 margin-left: 2rem;
-                padding: 5px 10px;
+                padding: 5px 25px;
                 border-radius: 10px;
               }
               .Add{
-                // border-radius: 20px;
-                // padding: 10px;
+                border-radius: 20px;
+                padding: 10px;
               }
             }
           }
