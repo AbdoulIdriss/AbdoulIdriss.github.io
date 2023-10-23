@@ -28,6 +28,29 @@ export class AuthService {
     return email_exist ? 'Email already exist !!!' : null;
   }
 
+  private userName(username: string): string | null {
+
+    let username_exist: boolean = false;
+
+    const users: Array<UserInterface> = this.localStorage.select('users');
+
+    if (users) {
+
+      for (let i = 0; i < users.length; i++) {
+
+        const current_user = users[i];
+
+        if (current_user.username == username) {
+
+          username_exist = true;
+          break;
+        }
+      }
+    }
+
+    return username_exist ? 'Username already exist !!!' : null;
+  }
+
   private getCurrentDate(): string {
 
     const date = new Date();
@@ -44,12 +67,28 @@ export class AuthService {
   register(user: any) {
 
     const checkEmail = this.emailExist(user.email);
+    const checkUsername = this.userName(user.username)
     
-    if (checkEmail) {
+    if (checkEmail && checkUsername ) {
 
       return {
         error: true,
+        message2:checkUsername ,
         message: checkEmail
+      }
+    }
+
+    if (checkEmail) {
+      return {
+        error: true,
+        message: 'check Email'
+      }
+    }
+
+    if (checkUsername) {
+      return {
+        error: true,
+        message: 'Username already used'
       }
     }
 
@@ -63,7 +102,7 @@ export class AuthService {
 
     return {
       error: false,
-      message: 'User create successfuly !!!',
+      message: 'User created successfuly !!!',
       data: user
     }
   }

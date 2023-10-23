@@ -51,17 +51,17 @@ export class BooksComponent implements OnInit {
     },
     {
       id: 7,
-      title: 'The Food of Morocco',
+      title: 'The End of French Rule...',
       image: "/assets/The_End_of_French_Rule_in_Cameroon_by_Martin_Atangana_Paperback___Indigo_Chapters_150x250.jpeg",
     },
     {
       id: 8,
-      title: 'The Food of Morocco',
+      title: 'Le Contrepied de Foe',
       image: "/assets/Le_Contrepied_de_Foe_150x250.jpeg",
     },
     {
       id: 9,
-      title: 'The Food of Morocco',
+      title: 'The Shackled Continent',
       image: "/assets/continent_150x250.jpg",
     },
 

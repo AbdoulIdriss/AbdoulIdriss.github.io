@@ -77,6 +77,7 @@ export class SignupComponent implements OnInit{
     } else {
 
       this.saveError = save.message
+      
     }
   }
 
