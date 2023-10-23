@@ -1,41 +1,66 @@
-<form  [formGroup]="registerForm" (ngSubmit)="onSubmit()" >
+<div class="overall">
+
+    <form  class="form" [formGroup]="registerForm" (ngSubmit)="onSubmit()" >
     
-    <div class="">
-        <label for="name">Name</label>
-        <input type="text" id="name" placeholder="Enter your name" formControlName="name">
-        <div class="" *ngIf="registerForm.controls['name'].errors">
-            {{ registerForm.getError('required') ? 'This field is required' : '' }}
-            {{ registerForm.getError('minLength') ? 'Please enter minimun 4 charactes' : '' }}
-            {{ registerForm.getError('maxLength') ? 'Please enter maximun 20 charactes' : '' }}
+        <div class="form-group">
+            <label for="name">Username</label>
+            <input type="text" id="username" placeholder="Enter your Username" formControlName="username">
+            <div class="" *ngIf="registerForm.controls['username'].errors">
+                {{ registerForm.getError('required') ? 'This field is required' : '' }}
+                {{ registerForm.getError('minLength') ? 'Please enter minimun 4 charactes' : '' }}
+                {{ registerForm.getError('maxLength') ? 'Please enter maximun 20 charactes' : '' }}
+            </div>
         </div>
-    </div>
-
-    <div class="">
-        <label for="email">Email</label>
-        <input type="email" id="email" placeholder="Enter your email" formControlName="email">
-        <div class="" *ngIf="registerForm.controls['email'].errors">
-            {{ registerForm.getError('required') ? 'This field is required' : '' }}
-            {{ registerForm.getError('email') ? 'Email syntax error' : '' }}
+    
+        <div class="form-group">
+            <label for="name">Firstname</label>
+            <input type="text" id="firstname" placeholder="Enter your firstname" formControlName="firstname">
+            <div class="" *ngIf="registerForm.controls['firstname'].errors">
+                {{ registerForm.getError('required') ? 'This field is required' : '' }}
+                {{ registerForm.getError('minLength') ? 'Please enter minimun 4 charactes' : '' }}
+                {{ registerForm.getError('maxLength') ? 'Please enter maximun 20 charactes' : '' }}
+            </div>
         </div>
-    </div>
-
-    <div class="">
-        <label for="password">Password</label>
-        <input type="password" id="password" placeholder="Enter your password" formControlName="password">
-        <div class="" *ngIf="registerForm.controls['email'].errors">
-            {{ registerForm.getError('required') ? 'This field is required' : '' }}
-            {{ registerForm.getError('pattern') ? 'Email syntax error' : '' }}
+    
+        <div class="form-group">
+            <label for="name">Lastname</label>
+            <input type="text" id="lastname" placeholder="Enter your lastname" formControlName="lastname">
+            <div class="" *ngIf="registerForm.controls['lastname'].errors">
+                {{ registerForm.getError('required') ? 'This field is required' : '' }}
+                {{ registerForm.getError('minLength') ? 'Please enter minimun 4 charactes' : '' }}
+                {{ registerForm.getError('maxLength') ? 'Please enter maximun 20 charactes' : '' }}
+            </div>
         </div>
-    </div>
+    
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" placeholder="Enter your email" formControlName="email">
+            <div class="" *ngIf="registerForm.controls['email'].errors">
+                {{ registerForm.getError('required') ? 'This field is required' : '' }}
+                {{ registerForm.getError('email') ? 'Email syntax error' : '' }}
+            </div>
+        </div>
+    
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" placeholder="Enter your password" formControlName="password">
+            <div class="" *ngIf="registerForm.controls['email'].errors">
+                {{ registerForm.getError('required') ? 'This field is required' : '' }}
+                {{ registerForm.getError('pattern') ? 'Email syntax error' : '' }}
+            </div>
+        </div>
+    
+        <div class="">
+    
+            <div class="" *ngIf="saveError">{{ saveError }}</div>
+            <button type="submit" >Create account</button>
+        </div>
+    
+        <p>
+            You have account? <a href="/login">Click here</a>
+        </p>
+        
+    </form>
 
-    <div class="">
+</div>
 
-        <div class="" *ngIf="saveError">{{ saveError }}</div>
-        <button type="submit" >Create account</button>
-    </div>
-</form>
-
-
-<p>
-    You have account? <a href="/login">Click here</a>
-</p>

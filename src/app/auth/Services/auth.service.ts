@@ -44,6 +44,7 @@ export class AuthService {
   register(user: any) {
 
     const checkEmail = this.emailExist(user.email);
+    
     if (checkEmail) {
 
       return {

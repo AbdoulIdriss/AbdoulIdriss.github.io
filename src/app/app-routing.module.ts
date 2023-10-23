@@ -8,6 +8,7 @@ import { LibraryComponent } from './library/library.component';
 import { AboutComponent } from './about/about.component';
 import { SigninComponent } from './auth/signin/signin.component';
 import { SignupComponent } from './auth/signup/signup.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 const routes: Routes = [
   { path:'', redirectTo:'app', pathMatch:'full', title:'Home'},
@@ -19,7 +20,8 @@ const routes: Routes = [
   { path: 'library', component:LibraryComponent, title:'favorites'},
   { path: 'signin', component:SigninComponent, title:'SignIn'},
   { path: 'signup', component:SignupComponent, title:'SignUp'},
-  { path: 'about', component:AboutComponent, title:'About' }
+  { path: 'about', component:AboutComponent, title:'About' },
+  { path: 'dashboard', component:DashboardComponent, title:'Dashboard' }
 ];
 
 @NgModule({
