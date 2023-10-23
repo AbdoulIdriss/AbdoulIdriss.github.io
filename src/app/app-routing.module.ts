@@ -9,6 +9,7 @@ import { AboutComponent } from './about/about.component';
 import { SigninComponent } from './auth/signin/signin.component';
 import { SignupComponent } from './auth/signup/signup.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { authGuard } from './auth/auth.guard';
 
 const routes: Routes = [
   { path:'', redirectTo:'app', pathMatch:'full', title:'Home'},
@@ -16,12 +17,12 @@ const routes: Routes = [
   { path: '', component:BodyComponent },
   { path: 'body', component:BodyComponent, title:'Home'},
   { path:'footer', component:FooterComponent },
-  { path: 'books', component:BooksComponent, title:'Books' },
-  { path: 'library', component:LibraryComponent, title:'favorites'},
+  { path: 'books', component:BooksComponent, title:'Books', canActivate:[authGuard] },
+  { path: 'library', component:LibraryComponent, title:'favorites', canActivate:[authGuard] },
   { path: 'signin', component:SigninComponent, title:'SignIn'},
   { path: 'signup', component:SignupComponent, title:'SignUp'},
   { path: 'about', component:AboutComponent, title:'About' },
-  { path: 'dashboard', component:DashboardComponent, title:'Dashboard' }
+  { path: 'dashboard', component:DashboardComponent, title:'Profile', canActivate:[authGuard] }
 ];
 
 @NgModule({
