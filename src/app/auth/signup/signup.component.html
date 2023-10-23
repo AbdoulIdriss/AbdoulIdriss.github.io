@@ -1,9 +1,11 @@
 <div class="overall">
 
     <form  class="form" [formGroup]="registerForm" (ngSubmit)="onSubmit()" >
+
+        <h1>SignUp</h1>
     
         <div class="form-group">
-            <label for="name">Username</label>
+            <label for="name">Username : </label>
             <input type="text" id="username" placeholder="Enter your Username" formControlName="username">
             <div class="" *ngIf="registerForm.controls['username'].errors">
                 {{ registerForm.getError('required') ? 'This field is required' : '' }}
@@ -13,7 +15,7 @@
         </div>
     
         <div class="form-group">
-            <label for="name">Firstname</label>
+            <label for="name">Firstname : </label>
             <input type="text" id="firstname" placeholder="Enter your firstname" formControlName="firstname">
             <div class="" *ngIf="registerForm.controls['firstname'].errors">
                 {{ registerForm.getError('required') ? 'This field is required' : '' }}
@@ -23,7 +25,7 @@
         </div>
     
         <div class="form-group">
-            <label for="name">Lastname</label>
+            <label for="name">Lastname : </label>
             <input type="text" id="lastname" placeholder="Enter your lastname" formControlName="lastname">
             <div class="" *ngIf="registerForm.controls['lastname'].errors">
                 {{ registerForm.getError('required') ? 'This field is required' : '' }}
@@ -33,7 +35,7 @@
         </div>
     
         <div class="form-group">
-            <label for="email">Email</label>
+            <label for="email">Email : </label>
             <input type="email" id="email" placeholder="Enter your email" formControlName="email">
             <div class="" *ngIf="registerForm.controls['email'].errors">
                 {{ registerForm.getError('required') ? 'This field is required' : '' }}
@@ -42,7 +44,7 @@
         </div>
     
         <div class="form-group">
-            <label for="password">Password</label>
+            <label for="password">Password : </label>
             <input type="password" id="password" placeholder="Enter your password" formControlName="password">
             <div class="" *ngIf="registerForm.controls['email'].errors">
                 {{ registerForm.getError('required') ? 'This field is required' : '' }}
@@ -57,7 +59,7 @@
         </div>
     
         <p>
-            You have account? <a href="/login">Click here</a>
+            Already have an account? <a href="/signin">Login</a>
         </p>
         
     </form>

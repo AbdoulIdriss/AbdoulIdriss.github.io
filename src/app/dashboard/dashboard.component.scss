@@ -3,14 +3,38 @@
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
     background-color: #fff;
 
-    .content{
+    .content {
         background-color: #3e5569;
         padding: 10rem;
         border-radius: 10px;
-        color: white;
+        color: black;
+        font-size: large;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
+        .user {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .overall {
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            width: 40rem;
+            padding: 20px;
+            background-color: #3e5569;
+            color: #fff;
+
+        }
     }
 }

@@ -2,6 +2,7 @@
 
     background-color: #3e5569;
     height: 100%;
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -10,13 +11,13 @@
 
     .form {
 
-        width: 100%;
+        width: 30%;
         height: 25rem;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        background-color: #fff;
+        background-color: rgb(252, 246, 247);
         border-radius: 6px;
 
         h1 {
@@ -30,26 +31,20 @@
 
         .form-group {
 
-            width: 20rem;
+            width: 260px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
             border-radius: 10px;
             font-size: 18px;
             background-color: white;
-            margin-top: 1rem;
+            margin: 5px;
 
-            i {
-                padding-left: 10px;
-                background-color: #fff;
-                color: black;
-            }
-            
-            label{
+            label {
 
                 margin-left: 5px;
             }
 
             input {
-                
+
                 height: 2rem;
                 outline: none;
                 border: none;
@@ -58,14 +53,25 @@
             }
         }
 
+        .forgetP {
+            
+            color: black;
+
+            a {
+                text-decoration: none;
+                color: black;
+            }
+        }
+
 
         button[type=submit] {
-            padding: 0.5rem 6.5rem;
+
+            padding: 10px 20px;
             justify-content: center;
             margin-top: 0.5rem;
             margin-left: 1.7rem;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
-            background-color: rgb(106, 106, 238);
+            background-color: #3e5569;
             border-radius: 8px;
             border: none;
             font-weight: bold;
@@ -79,26 +85,14 @@
 
         }
 
-        .F-password {
-            display: flex;
-            justify-content: center;
-            color: black;
-            p{
-                a{
-                    text-decoration: none;
-                }
-            }
-        }
 
-        .createA {
+        .redirect {
 
             color: black;
             display: flex;
             justify-content: center;
-
-            .text{
-                margin-top: 5px;
-            }
+            margin: 4px;
+            padding: 3px;
 
             a {
                 text-decoration: none;
@@ -109,4 +103,3 @@
     }
 
 }
-

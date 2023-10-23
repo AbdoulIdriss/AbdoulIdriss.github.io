@@ -2,13 +2,14 @@
 
     background-color: #3e5569;
     height: 100%;
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 
     .form {
-        width: 100%;
+        width: 30%;
         height: 25rem;
         display: flex;
         flex-direction: column;
@@ -32,6 +33,7 @@
             border-radius: 10px;
             font-size: 18px;
             background-color: white;
+            margin: 4px;
 
             i {
                 padding-left: 10px;
