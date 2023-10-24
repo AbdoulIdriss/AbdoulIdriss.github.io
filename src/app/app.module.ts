@@ -16,6 +16,7 @@ import { AboutComponent } from './about/about.component';
 import { AuthModule } from './auth/auth.module';
 import { NavbarComponent } from './navbar/navbar.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { ContactComponent } from './contact/contact.component';
 
 
 
@@ -28,7 +29,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     BooksComponent,
     LibraryComponent,
     AboutComponent,
-    DashboardComponent
+    DashboardComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,
