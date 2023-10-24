@@ -107,8 +107,9 @@ export class BooksComponent implements OnInit {
     {
       id: 12,
       title: 'The Shackled Continent',
-      image: "/assets/continent_150x250.jpg",
-      path: ''
+      image: "/assets/CVT_LONGINGS-OF-JENDE-JONGA_8752_150x250.webp",
+      description:'Aux États-Unis et au Cameroun, en 2007.Nous sommes à lautomne 2007 à New York et Jende Jonga, un immigrant illégal dorigine camerounaise, est en passe de réaliser son rêve : après avoir été plongeur et chauffeur de taxis, il vient de décrocher un emploi de chauffeur pour Clark Edwards, riche banquier à la Lehman Brothers.  : ,',
+      path: 'https://www.babelio.com/livres/Mbue-Voici-venir-les-reveurs/846024'
     },
 
   ]
