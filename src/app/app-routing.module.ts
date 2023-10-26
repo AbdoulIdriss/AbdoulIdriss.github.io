@@ -11,6 +11,7 @@ import { SignupComponent } from './auth/signup/signup.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { authGuard } from './auth/auth.guard';
 import { ContactComponent } from './contact/contact.component';
+import { logoutGuard } from './auth/logout.guard';
 
 const routes: Routes = [
   { path:'', redirectTo:'app', pathMatch:'full', title:'Home'},
@@ -20,8 +21,8 @@ const routes: Routes = [
   { path:'footer', component:FooterComponent },
   { path: 'books', component:BooksComponent, title:'Books', canActivate:[authGuard] },
   { path: 'library', component:LibraryComponent, title:'favorites', canActivate:[authGuard] },
-  { path: 'signin', component:SigninComponent, title:'SignIn'},
-  { path: 'signup', component:SignupComponent, title:'SignUp'},
+  { path: 'signin', component:SigninComponent, title:'SignIn', canActivate:[logoutGuard]},
+  { path: 'signup', component:SignupComponent, title:'SignUp', canActivate:[logoutGuard]},
   { path: 'about', component:AboutComponent, title:'About' },
   { path: 'contact', component:ContactComponent, title:'Contact' },
   { path: 'dashboard', component:DashboardComponent, title:'Profile', canActivate:[authGuard] }

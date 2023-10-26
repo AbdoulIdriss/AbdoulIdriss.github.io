@@ -1,80 +1,92 @@
 <div class="overall">
 
-    <form  class="form" [formGroup]="registerForm" (ngSubmit)="onSubmit()" >
+    <form  class="form" [formGroup]="registerForm" (ngSubmit)="onSubmit()"  novalidate >
 
         <h1>SignUp</h1>
     
         <div class="form-group">
 
-            <label for="name">Username : </label>
-            <input type="text" id="username" placeholder="Enter your Username" formControlName="username">
+            <label for="username">Username : </label>
 
-            <div style="color: red;" class="" *ngIf="registerForm.controls['username'].errors">
+            <input type="text" name="username" id="username" placeholder="Enter your Username" formControlName="username" required >
 
-                {{ registerForm.getError('required') ? 'This field is required' : '' }}
-                {{ registerForm.getError('minLength') ? 'Please enter minimun 4 charactes' : '' }}
+        </div>
 
-            </div>
+        <div class="conditions" *ngIf="registerForm.controls['username'].dirty || registerForm.controls['username'].touched " >
+
+            <p *ngIf="registerForm.controls['username'].errors?.['minLength'] "> Minimum 4 characters </p>
+            <p *ngIf="registerForm.controls['username'].errors?.['maxLength'] "> Maximum 20 characters </p>
 
         </div>
     
         <div class="form-group">
 
             <label for="name">Firstname : </label>
-            <input type="text" id="firstname" placeholder="Enter your firstname" formControlName="firstname">
 
-            <div style="color: red;" class="" *ngIf="registerForm.controls['firstname'].errors">
+            <input type="text" name="firstname" id="firstname" placeholder="Enter your firstname" formControlName="firstname" required >
 
-                {{ registerForm.getError('required') ? 'This field is required' : '' }}
+        </div>
 
-            </div>
+        <div class="conditions" *ngIf="registerForm.controls['firstname'].dirty || registerForm.controls['firstname'].touched " >
+
+            <p *ngIf="registerForm.controls['firstname'].errors?.['minLength'] "> Minimum 2 characters </p>
+            <p *ngIf="registerForm.controls['firstname'].errors?.['maxLength'] "> Maximum 10 characters </p>
+
         </div>
     
         <div class="form-group">
 
             <label for="name">Lastname : </label>
-            <input type="text" id="lastname" placeholder="Enter your lastname" formControlName="lastname">
 
-            <div style="color: red;" class="" *ngIf="registerForm.controls['lastname'].errors">
+            <input type="text" name="lastname" id="lastname" placeholder="Enter your lastname" formControlName="lastname" required >
 
-                {{ registerForm.getError('required') ? 'This field is required' : '' }}
+        </div>
 
-            </div>
+        <div class="conditions" *ngIf="registerForm.controls['lastname'].dirty || registerForm.controls['lastname'].touched " >
+
+            <p *ngIf="registerForm.controls['lastname'].errors?.['minLength'] "> Minimum 2 characters </p>
+            <p *ngIf="registerForm.controls['lastname'].errors?.['maxLength'] "> Maximum 10 characters </p>
 
         </div>
     
         <div class="form-group">
 
             <label for="email">Email : </label>
-            <input type="email" id="email" placeholder="Enter your email" formControlName="email">
 
-            <div style="color: red;" class="" *ngIf="registerForm.controls['email'].errors">
+            <input type="email" name="email" id="email" placeholder="Enter email" formControlName="email" required >
 
-                {{ registerForm.getError('required') ? 'This field is required' : '' }}
-                {{ registerForm.getError('email') ? 'Enter the correct email format' : '' }}
+        </div>
 
-            </div>
+        <div class="conditions" *ngIf=" registerForm.controls['email'].dirty || registerForm.controls['email'].touched">
+
+            <p *ngIf="registerForm.controls['email'].errors?.['email']" >Enter valid email format</p>
+
+            <p *ngIf="saveError" >
+                Email already exist
+            </p>
 
         </div>
     
         <div class="form-group">
 
             <label for="password">Password : </label>
-            <input type="password" id="password" placeholder="Enter your password" formControlName="password">
-            
-            <div style="color: red;" class="" *ngIf="registerForm.controls['password'].errors">
 
-                {{ registerForm.getError('required') ? 'This field is required' : '' }}
-                {{ registerForm.getError('pattern') ? 'Enter the correct password format' : '' }}
+            <input type="password" name="password" id="password" placeholder="Enter password" formControlName="password" required >
 
-            </div>
+        </div>
+
+        <div class="conditions" *ngIf=" registerForm.controls['password'].dirty || registerForm.controls['password'].touched">
+
+            <p *ngIf="registerForm.controls['password'].errors?.['pattern']" >
+                Atleast 1 letter 1 uppercase 1 lowercase and 1 special character
+            </p>
 
         </div>
     
         <div class="">
-    
-            <div class="" *ngIf="saveError">{{ saveError }}</div>
-            <button type="submit" >Create account</button>
+
+            <button type="submit" [disabled]="registerForm.invalid">Create Account </button>
+
         </div>
     
         <p>

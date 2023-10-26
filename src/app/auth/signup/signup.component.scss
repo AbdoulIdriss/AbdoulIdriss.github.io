@@ -10,7 +10,7 @@
 
     .form {
         width: 30%;
-        height: 25rem;
+        height: 30rem;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -59,6 +59,10 @@
         .conditions{
 
             background-color: white;
+            color: red;
+            p{
+                color: red; 
+            }
         }
 
         button[type="submit"] {

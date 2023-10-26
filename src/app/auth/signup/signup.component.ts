@@ -13,14 +13,18 @@ import { NavandfootService } from '../Services/navandfoot.service';
 export class SignupComponent implements OnInit{
 
   regex_password: RegExp = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@$!%*#?&^_-]).{8,}/;
-  registerForm: FormGroup = new FormGroup({});
+
+  registerForm!: FormGroup ;
+
   saveError: string = '';
 
   constructor (
+
     private formBuilder: FormBuilder,
     private authService: AuthService,
     private router: Router,
     public navAndFoot: NavandfootService,
+
   ) {}
 
 
@@ -30,33 +34,33 @@ export class SignupComponent implements OnInit{
 
     this.registerForm = this.formBuilder.group({
     
-      username:['', [
+      username: new FormControl ('', [
         Validators.required,
         Validators.minLength(4),
         Validators.maxLength(20)
-      ]],
+      ]),
 
-      firstname:['', [
+      firstname:  new FormControl ('', [
         Validators.required,
-        Validators.minLength(4),
-        Validators.maxLength(20)
-      ]],
+        Validators.minLength(2),
+        Validators.maxLength(10)
+      ]),
 
-      lastname:['', [
+      lastname: new FormControl ('', [
         Validators.required,
-        Validators.minLength(4),
-        Validators.maxLength(20)
-      ]],
+        Validators.minLength(2),
+        Validators.maxLength(10)
+      ]),
 
-      email: ['', [
+      email: new FormControl ('', [
         Validators.required,
         Validators.email
-      ]],
+      ]),
 
-      password: ['', [
+      password: new FormControl('', [
         Validators.required,
         Validators.pattern(this.regex_password)
-      ]]
+      ])
 
     })
 
@@ -73,6 +77,7 @@ export class SignupComponent implements OnInit{
       this.router.navigate(['body'], {
 
         queryParams: {id: save.data.id}
+
       })
     } else {
 
@@ -80,7 +85,5 @@ export class SignupComponent implements OnInit{
       
     }
   }
-
-
 
 }

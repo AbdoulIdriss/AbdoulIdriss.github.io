@@ -6,12 +6,12 @@
 
         <div class="form-group">
             <label for="email">Email : </label>
-            <input type="email" id="email" placeholder="Enter your email" formControlName="email">
+            <input type="email" name="email" id="email" placeholder="Enter your email" formControlName="email" required>
         </div>
     
         <div class="form-group">
             <label for="password">Password : </label>
-            <input type="password" id="password" placeholder="Enter password" formControlName="password">
+            <input type="password" name="password" id="password" placeholder="Enter password" formControlName="password" required>
         </div>
     
         <div class="forgetP">
@@ -19,8 +19,10 @@
         </div>
     
         <div class="">
+            
             <div class="" *ngIf="loginError">{{ loginError }}</div>
             <button type="submit" [disabled]="loginForm.invalid">Login</button>
+
         </div>
 
         <p class="redirect">
