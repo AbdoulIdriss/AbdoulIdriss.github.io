@@ -32,7 +32,7 @@
         <mat-menu #menu="matMenu">
           <button mat-menu-item *ngIf="!checkLog()" (click)="signin()">SignIn</button>
           <button mat-menu-item (click)="dashboard()">Profile</button>
-          <button mat-menu-item (click)="favorites()">Favorites</button>
+          <button mat-menu-item (click)="favorites()">My Collection</button>
           <button mat-menu-item *ngIf="checkLog()" (click)="logout()">LogOut</button>
         </mat-menu>
 
