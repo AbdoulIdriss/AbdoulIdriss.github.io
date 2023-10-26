@@ -3,9 +3,10 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 20px;
+    // padding: 20px;
     background-color: #3e5569;
     color: #fff;
+    width: 100%;
 
     .logo {
         
@@ -28,7 +29,7 @@
         .menu {
             display: flex;
             gap: 1em;
-            font-size: 18px;
+            font-size: 1.5rem;
             
             li {
                 padding: 5px 14px;
@@ -50,5 +51,61 @@
 
 
         }
+    }
+}
+
+// 2xl
+@media (max-width: 1536px) {
+    .navbar {
+        max-width: 1536px;
+    }
+}
+
+// xl
+@media (max-width: 1280px) {
+    .navbar {
+        max-width: 1284px;
+    }
+}
+
+// lg
+@media (max-width: 1024px) {
+    .navbar {
+        max-width: 1024px;
+    }
+}
+
+// md
+@media (max-width: 768px) {
+    .navbar {
+        max-width: 768px;
+    }
+}
+
+// sm
+@media (max-width: 640px) {
+    .navbar {
+        max-width: 640px;
+    }
+}
+
+//beyond sm
+@media (max-width: 540px) {
+    .navbar {
+        max-width: 540px;
+    }
+}
+
+// xs 
+@media (max-width: 475px) {
+    .navbar {
+        max-width: 475px;
+    }
+}
+
+//beyon xs
+@media (max-width: 412px) {
+    .navbar {
+        max-width: 412px;
     }
 }

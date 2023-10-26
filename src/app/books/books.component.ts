@@ -70,7 +70,7 @@ export class BooksComponent implements OnInit {
     },
     {
       id: 7,
-      title: 'The End of French Rule...',
+      title: 'The End of French Rule..',
       image: "/assets/The_End_of_French_Rule_in_Cameroon_by_Martin_Atangana_Paperback___Indigo_Chapters_150x250.jpeg",
       description:'Introduction Political and economic development in Cameroon in the post war era, 1946-1956 2. The implementation of the Loi cadre, 1957 3. The recognition of Cameroons option for independence, 1958 4. The transition and transfer of power, 1959-1960 Conclusion',
       path: 'https://www.worldcat.org/title/1090068007'
